@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
+const Author = require('../models/task');
+const Bookg = require('../models/task');
 
 router.get('/', async (req, res) => {
   const tasks = await Task.find();
@@ -10,6 +12,12 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/add', async (req, res, next) => {
+  const task = new Task(req.body);
+  await task.save();
+  res.redirect('/');
+});
+
+router.post('/addAuthor', async (req, res, next) => {
   const task = new Task(req.body);
   await task.save();
   res.redirect('/');

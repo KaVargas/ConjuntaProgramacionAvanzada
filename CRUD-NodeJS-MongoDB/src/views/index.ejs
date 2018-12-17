@@ -3,21 +3,19 @@
 <div class="container">
 
   <div class="row">
-    <!--FORM-->
+    <!--FORM AUTOR-->
     <div class="col-md-5">
       <div class="card">
         <div class="card-body">
-          <form action="/add" method="POST">
+          <form action="/addAuthor" method="POST">
             <div class="form-group">
-              <input class="form-control" type="text" name="title" placeholder="Title">
+              <input class="form-control" type="text" name="code" placeholder="Code's author">
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="description" cols="80"
-                placeholder="Add a Description"
-                ></textarea>
+              <input class="form-control" type="text" name="name" placeholder="Name's author">
             </div>
             <button class="btn btn-primary" type="submit">
-              Add
+              Add author
             </button>
           </form>
         </div>
@@ -57,7 +55,25 @@
           <% } %>
         </tbody>
       </table>
+    </div>
 
+     <!--FORM BOOK-->
+     <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <form action="/addBook" method="POST">
+            <div class="form-group">
+              <input class="form-control" type="text" name="code" placeholder="Code's of book">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="title" placeholder="Title's boof">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
