@@ -11,15 +11,4 @@ const TaskSchema = new Schema({
     }
 });
 
-const autorSchema = new Schema({
-    name: String,
-    code: String
-});
-
-const bookSchema = new Schema({
-    title: String,
-    year: String,
-    autor: autorSchema
-});
-
 module.exports = mongoose.model('tasks',TaskSchema);
