@@ -12,7 +12,8 @@ const TaskSchema = new Schema({
 });
 
 const autorSchema = new Schema({
-    nombre: String
+    name: String,
+    code: String
 });
 
 const bookSchema = new Schema({
