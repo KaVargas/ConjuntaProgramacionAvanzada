@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
-const Author = require('../models/task');
-const Bookg = require('../models/task');
+const Author = require('../models/author');
+const Book = require('../models/book');
 
 router.get('/', async (req, res) => {
   const tasks = await Task.find();
@@ -18,13 +18,13 @@ router.post('/add', async (req, res, next) => {
 });
 
 router.post('/addAuthor', async (req, res, next) => {
-  const task = new Task(req.body);
+  const task = new Author(req.body);
   await task.save();
   res.redirect('/');
 });
 
 router.post('/addBook', async (req, res, next) => {
-  const task = new Task(req.body);
+  const task = new Book(req.body);
   await task.save();
   res.redirect('/');
 });
