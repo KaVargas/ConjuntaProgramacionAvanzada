@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('../models/task');
-const Author = require('../models/author');
 const Book = require('../models/book');
+const Author = require('../models/author');
+const Task = require('../models/task');
 
 router.get('/', async (req, res) => {
-  const tasks = await Task.find();
+  const listBooks = await Book.find();
+  const listAuthors = await Author.find();
   res.render('index', {
-    tasks
+    listBooks
   });
 });
 
@@ -52,7 +53,7 @@ router.post('/edit/:id', async (req, res, next) => {
 
 router.get('/delete/:id', async (req, res, next) => {
   let { id } = req.params;
-  await Task.remove({_id: id});
+  await Book.remove({_id: id});
   res.redirect('/');
 });
 
